@@ -13,7 +13,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: linear-gradient(to top, beige 0%, black 100%);
+    background-image: linear-gradient(to top, beige 0%, pink 100%);
     background-attachment: fixed;
   }
   
@@ -22,12 +22,12 @@
     min-width: 300px; 
     box-sizing: border-box;
     padding: 20px;
-    background: black;
+    background: pink;
     border-radius: 20px;
     color: white;
   }
   
-  .calculator__screen {
+  .OutputScreen {
     background: grey;
     width: 100%;
     display: block;
@@ -50,8 +50,15 @@
     align-items: center;
     outline: none;
   }
-  .calculator__keyboard {
+  .Keyboard {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 15px;
+  }
+  .button:hover{
+    background-color: aqua;
+  }
+  @media screen and (max-width : 300px) {
+
+    
   }

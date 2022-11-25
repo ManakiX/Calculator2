@@ -40,6 +40,13 @@ function calculate() {
     var p = document.getElementById("result").value;
     var q = eval(p);
     document.getElementById("result").value = q;
+    try{
+        document.getElementById("result").value = eval(document.getElementById("result").value);
+    }
+    catch(err)
+    {
+        alert("invalid");
+    }
 }
 function clear(params) {
     
