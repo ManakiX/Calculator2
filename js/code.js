@@ -36,18 +36,11 @@ function display(value) {
     document.getElementById("result").value += value;
 }
  
-function calculate() {
-    var p = document.getElementById("result").value;
-    var q = eval(p);
-    document.getElementById("result").value = q;
-    try{
-        document.getElementById("result").value = eval(document.getElementById("result").value);
-    }
-    catch(err)
-    {
-        alert("invalid");
-    }
-}
+// function calculate() {
+//     var p = document.getElementById("result").value;
+//     var q = eval(p);
+//     document.getElementById("result").value = q;
+// }
 function clear(params) {
     
 }
@@ -56,4 +49,13 @@ function clearScreen() {
 }
 function del(){
     document.getElementById("result").value = document.getElementById("result").value.slice(0, -1)
+}
+function calculate(){
+    try{
+        document.getElementById("result").value = eval(document.getElementById("result").value);
+    }
+    catch(err)
+    {
+        alert("invalid");
+    }
 }
