@@ -21,21 +21,21 @@
         </div>
         <div class="Keyboard">
           <input type="button" class="button" onclick="clearScreen()" value="C">
-          <input type="button" class="button" onclick="display('.')" value=".">
+          <input type="button" class="button" id="decimal" onclick="decimalCal('.')" value=".">
           <input type="button" class="button" onclick="del('del')" value="D" >
-          <input type="button" class="button" onclick="display('/')" value="/">
+          <input type="button" class="button" onclick="operator('/')" value="/">
           <input type="button" class="button" onclick="display('7')" value="7">
           <input type="button" class="button" onclick="display('8')" value="8">
           <input type="button" class="button" onclick="display('9')" value="9">
-          <input type="button" class="button" onclick="display('*')" value="*">
+          <input type="button" class="button" onclick="operator('*')" value="*">
           <input type="button" class="button" onclick="display('4')" value="4">
           <input type="button" class="button" onclick="display('5')" value="5">
           <input type="button" class="button" onclick="display('6')" value="6">
-          <input type="button" class="button" onclick="display('-')" value="-">
+          <input type="button" class="button" onclick="operator('-')" value="-">
           <input type="button" class="button" onclick="display('1')" value="1">
           <input type="button" class="button" onclick="display('2')" value="2">
           <input type="button" class="button" onclick="display('3')" value="3">
-          <input type="button" class="button" onclick="display('+')" value="+">
+          <input type="button" class="button" onclick="operator('+')" value="+">
           <input type="button" class="button" onclick="display('0')" value="0">
           <input type="button" class="button" id="equal" onclick="calculate()" value="=">
         </table>

@@ -35,6 +35,7 @@
 function display(value) {
     document.getElementById("result").value += value;
 }
+let allowed = true;
  
 // function calculate() {
 //     var p = document.getElementById("result").value;
@@ -59,3 +60,34 @@ function calculate(){
         alert("invalid");
     }
 }
+function decimalCal (value) {
+    if (allowed === true) {
+        value += value ;
+        allowed = false;
+    }
+}
+function operator (value) {
+    value += value ;
+    allowed: true;
+}
+const toggleAllowed = () => {
+    allowed = true;
+}
+function _________() {
+    let x = (InputValue.value.length - 1);
+    if ((InputValue.value[x]).includes('.') ) {
+        return false;
+    }
+    else {
+        return true;
+    }
+}
+// decimal.addEventListener('click', function(){
+//     if (allowed) {
+//         result.value += decimal.textContent;
+//         allowed = false;
+//     }
+// })
+
+
+
