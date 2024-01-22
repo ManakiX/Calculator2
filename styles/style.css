@@ -15,7 +15,7 @@ body{
   background: linear-gradient(#2196f3 , #e91e63);
 }
 
-/*Background bubbles*/
+/*Background*/
 .bubbles{
   position: absolute;
   bottom: -120px;

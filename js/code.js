@@ -1,34 +1,68 @@
 let currentVal = '';
+let hasAnswer = false;
 
-function appendValue(value) {
-    currentVal += value;
-    document.getElementById('result').value = currentVal;
+function updateResult(value) {
+    document.getElementById('result').value = value;
 }
 
-function operate(operator) {
-    // This is to check if the last character to be entered is an operator
-    const lastChar = currentVal.slice(-1);
-    const operators = ['+', '-', '*', '/'];
+function resetResult() {
+    currentVal = '';
+    hasAnswer = false;
+    updateResult('0');
+}
 
-    // If the last character is not an operator, the user can add one
-    if (!operators.includes(lastChar)) {
-        currentVal += ` ${operator} `;
-        document.getElementById('result').value = currentVal;
+function appendValue(value) {
+    if (hasAnswer) {
+        resetResult();
+    }
+
+    if (isOperator(value)) {
+        operate(value);
+    } else {
+        currentVal += value;
+        updateResult(currentVal);
     }
 }
 
+function operate(operator) {
+    const operators = ['+', '-', '*', '/'];
+
+    if (!endsWithOperator(currentVal) && !operators.includes(operator)) {
+        currentVal += ` ${operator} `;
+        updateResult(currentVal);
+    } else {
+        showError();
+    }
+}
+
+function isOperator(value) {
+    const operators = ['+', '-', '*', '/'];
+    return operators.includes(value) && !endsWithOperator(currentVal);
+}
+
+function endsWithOperator(str) {
+    const operators = ['+', '-', '*', '/'];
+    return operators.some(op => str.trim().endsWith(op));
+}
+
+function showError() {
+    resetResult();
+    updateResult('Error');
+}
+
 function clearScreen() {
-    currentVal = '';
-    document.getElementById('result').value = '';
+    resetResult();
 }
 
 function calculate() {
     try {
         let result = eval(currentVal);
-        document.getElementById('result').value = result;
+        updateResult(result);
         currentVal = result.toString();
+        hasAnswer = true;
     } catch (error) {
-        document.getElementById('result').value = 'Error';
-        currentVal = '';
+        showError();
     }
 }
+
+
